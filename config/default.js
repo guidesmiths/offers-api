@@ -10,6 +10,10 @@ module.exports = {
       }
     }
   },
+  postgres: {
+    database: 'postgres',
+    user: 'postgres'
+  },
   logger: {
     transport: 'bunyan',
     include: [

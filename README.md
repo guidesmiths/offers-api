@@ -1,5 +1,5 @@
 # offers-api
-An offers API surfacing mysql data using:
+An offers API surfacing postgres data using:
 
 * [systemic](https://github.com/guidesmiths/systemic)
 * [confabulous](https://github.com/guidesmiths/confabulous)
