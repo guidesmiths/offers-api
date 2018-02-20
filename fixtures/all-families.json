@@ -1,0 +1,355 @@
+[
+  {
+    "id": 0,
+    "name": "Mobil",
+    "title": "Móvil",
+    "icon": "mobile",
+    "tags": ["index", "mobile"],
+    "titleTariff": "¿Inimitable o personaliza?",
+    "offers": [
+      {
+        "id": 0,
+        "name": "inimitable",
+        "title": "La Inimitable",
+        "multichoice": false,
+        "bundles": [
+          {
+            "id": 0,
+            "name": "inimitable",
+            "price": "19'90",
+            "features": [
+              {
+                "id": 0,
+                "category": "navega",
+                "value": "19",
+                "units": "GB"
+              },
+              {
+                "id": 1,
+                "category": "habla",
+                "value": "5001",
+                "units": "min"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Personalizada",
+        "title": "Personalizada",
+        "multichoice": true,
+        "bundles": [
+          {
+            "id": 1,
+            "name": "twofivegb-oneone",
+            "price": "11'90",
+            "features": [
+              {
+                "id": 2,
+                "category": "navega",
+                "value": "2'5",
+                "units": "GB"
+              },
+              {
+                "id": 3,
+                "category": "habla",
+                "value": "101",
+                "units": "min"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "fivegb-oneone",
+            "price": "14'90",
+            "features": [
+              {
+                "id": 4,
+                "category": "navega",
+                "value": "5",
+                "units": "GB"
+              },
+              {
+                "id": 3,
+                "category": "habla",
+                "value": "101",
+                "units": "min"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "twofivegb-zero",
+            "price": "6'90",
+            "features": [
+              {
+                "id": 2,
+                "category": "navega",
+                "value": "2'5",
+                "units": "GB"
+              },
+              {
+                "id": 5,
+                "category": "habla",
+                "value": "0",
+                "units": "cént/min"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "name": "fivegb-zero",
+            "price": "10'90",
+            "features": [
+              {
+                "id": 4,
+                "category": "navega",
+                "value": "5",
+                "units": "GB"
+              },
+              {
+                "id": 5,
+                "category": "habla",
+                "value": "0",
+                "units": "cént/min"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Fiber",
+    "title": "Fibra 100Mb",
+    "icon": "fiber",
+    "tags": ["index", "fiber"],
+    "titleTariff": "",
+    "offers": [
+      {
+        "id": 2,
+        "name": "Fibra en casa",
+        "title": "Fibra en casa",
+        "multichoice": false,
+        "bundles": [
+          {
+            "id": 5,
+            "name": "Fibra en casa",
+            "price": "34'60",
+            "features": [
+              {
+                "id": 6,
+                "category": "navega",
+                "value": "100",
+                "units": "MB"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "movil+fibra",
+    "title": "Móvil + Fibra",
+    "icon": "fiber",
+    "tags": ["mobile+fiber"],
+    "titleTariff": "¿Qué tarifa móvil?",
+    "offers": [
+      {
+        "id": 3,
+        "name": "Fibra + La Inimitable",
+        "title": "Fibra y La Inimitable",
+        "multichoice": false,
+        "withName": false,
+        "bundles": [
+          {
+            "id": 8,
+            "name": "Fibra y La Inimitable",
+            "price": "48'90",
+            "features": [
+              {
+                "id": 7,
+                "category": "navega",
+                "value": "19",
+                "units": "GB"
+              },
+              {
+                "id": 8,
+                "category": "habla",
+                "value": "5001",
+                "units": "min"
+              },
+              {
+                "id": 9,
+                "category": "fibra",
+                "value": "100",
+                "units": "MB",
+                "visible": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Fibra + Personalizada",
+        "title": "Fibra y Personalizada",
+        "multichoice": false,
+        "withName": false,
+        "bundles": [
+          {
+            "id": 9,
+            "name": "Fibra y Personalizada",
+            "price": "43'90",
+            "features": [
+              {
+                "id": 7,
+                "category": "navega",
+                "value": "5",
+                "units": "GB"
+              },
+              {
+                "id": 8,
+                "category": "habla",
+                "value": "101",
+                "units": "min"
+              },
+              {
+                "id": 9,
+                "category": "fibra",
+                "value": "100",
+                "units": "MB",
+                "visible": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Fibra + Personalizada",
+        "title": "Fibra y Personalizada",
+        "multichoice": false,
+        "withName": false,
+        "bundles": [
+          {
+            "id": 10,
+            "name": "Fibra y Personalizada",
+            "price": "39'90",
+            "features": [
+              {
+                "id": 7,
+                "category": "navega",
+                "value": "5",
+                "units": "GB"
+              },
+              {
+                "id": 8,
+                "category": "habla",
+                "value": "0",
+                "units": "cént/min"
+              },
+              {
+                "id": 9,
+                "category": "fibra",
+                "value": "100",
+                "units": "MB",
+                "visible": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Fibra + Personalizada",
+        "title": "Fibra y Personalizada",
+        "multichoice": false,
+        "withName": false,
+        "bundles": [
+          {
+            "id": 11,
+            "name": "Fibra y Personalizada",
+            "price": "40'90",
+            "features": [
+              {
+                "id": 7,
+                "category": "navega",
+                "value": "2'5",
+                "units": "GB"
+              },
+              {
+                "id": 8,
+                "category": "habla",
+                "value": "101",
+                "units": "min"
+              },
+              {
+                "id": 9,
+                "category": "fibra",
+                "value": "100",
+                "units": "MB",
+                "visible": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Solo Hablar",
+    "title": "Solo Hablar",
+    "icon": "mobile",
+    "tags": ["mobile"],
+    "titleTariff": "¿Inimitable o personaliza?",
+    "offers": [
+      {
+        "id": 4,
+        "name": "Solo voz",
+        "title": "Solo voz",
+        "multichoice": false,
+        "withName": true,
+        "bundles": [
+          {
+            "id": 6,
+            "name": "Habla 1.001 min",
+            "price": "9'00",
+            "features": [
+              {
+                "id": 8,
+                "category": "habla",
+                "value": "1001",
+                "units": "min"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Solo voz",
+        "title": "Solo voz",
+        "multichoice": false,
+        "withName": true,
+        "subTitle": {
+          "title": "Sin cuotas",
+          "subtitle": "Paga solo por lo que hables"
+        },
+        "bundles": [
+          {
+            "id": 13,
+            "name": "Solo voz Sin cuotas",
+            "price": "0'00",
+            "features": []
+          }
+        ]
+      }
+    ]
+  }
+]
