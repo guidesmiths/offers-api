@@ -47,12 +47,18 @@ module.exports = (options) => {
 
         const getFeaturesByBundle = (bundle) => {
             debug(`Getting features for bundle ${bundle}`);
-            return Promise.resolve([{ id: 4 }]);
+            return postgres.query(`SELECT feat.id, feat.category, feat.value, feat.units
+                FROM features feat
+                JOIN bundle_to_feature btf
+                ON feat.id=btf.feature_id
+                WHERE btf.bundle_id=${bundle};`)
+                    .then((result) => result.rows);
         };
 
         const getFeature = (feature) => {
             debug(`Getting data for feature ${feature}`);
-            return Promise.resolve({ id: 5 });
+            return postgres.query(`SELECT * FROM features WHERE id=${feature};`)
+                .then((result) => result.rows.length && result.rows[0]);
         };
 
         cb(null, {
