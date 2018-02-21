@@ -16,10 +16,11 @@ module.exports = (options) => {
 
         const getOffersPerFamily = (family) => {
             debug(`Getting offers for family ${family}`);
-            return postgres.query(`SELECT off.id, off.name, off.title, off.multichoice, fto.family_id FROM offers off
+            return postgres.query(`SELECT off.id, off.name, off.title, off.multichoice
+                FROM offers off
                 JOIN family_to_offer fto ON off.id=fto.offer_id
                 WHERE fto.family_id=${family};`)
-                .then((result) => result.rows);
+                    .then((result) => result.rows);
         };
 
         const getOffer = (offer) => {
@@ -30,12 +31,18 @@ module.exports = (options) => {
 
         const getBundlesByOffer = (offer) => {
             debug(`Getting bundles for offer ${offer}`);
-            return Promise.resolve([{ id: 2 }]);
+            return postgres.query(`SELECT bund.id, bund.name, bund.price
+                FROM bundles bund
+                JOIN offer_to_bundle otb
+                ON bund.id=otb.bundle_id
+                WHERE otb.offer_id=${offer};`)
+                    .then((result) => result.rows);
         };
 
         const getBundle = (bundle) => {
             debug(`Getting data for bundle ${bundle}`);
-            return Promise.resolve({ id: 3 });
+            return postgres.query(`SELECT * FROM bundles WHERE id=${bundle};`)
+                .then((result) => result.rows.length && result.rows[0]);
         };
 
         const getFeaturesByBundle = (bundle) => {
