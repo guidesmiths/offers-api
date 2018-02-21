@@ -10,7 +10,8 @@ module.exports = () => {
         app.get([ '/api/v1/families', '/api/v1/families/:family' ], (req, res) => {
             const respond = process(res);
             const { family } = req.params;
-            respond(controller.getFamilies(family));
+            const operation = family ? controller.getFamily.bind(null, family) : controller.getFamilies.bind(null, null);
+            respond(operation());
         });
 
         app.get([ '/api/v1/families/:family/offers', '/api/v1/offers/:offer' ], (req, res) => {

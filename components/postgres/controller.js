@@ -2,13 +2,14 @@ const debug = require('debug')('offers-controller');
 module.exports = (options) => {
 
     const start = ({ postgres, config, logger }, cb) => {
-        const getFamilies = (family) => {
-            if (family) {
-                debug(`Getting data for family ${family}`);
-                return Promise.resolve({ id: 0 });
-            }
+        const getFamilies = () => {
             debug('Getting all families...');
             return Promise.resolve([{ id: 0 }, { id: 1 }]);
+        };
+
+        const getFamily = (family) => {
+            debug(`Getting data for family ${family}`);
+            return Promise.resolve({ id: 0 });
         };
 
         const getOffersPerFamily = (family) => {
@@ -22,9 +23,8 @@ module.exports = (options) => {
         };
 
         cb(null, {
-            getFamilies,
-            getOffersPerFamily,
-            getOffer
+            getFamilies, getFamily,
+            getOffersPerFamily, getOffer
         });
     };
 
