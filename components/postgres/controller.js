@@ -24,7 +24,7 @@ module.exports = (options) => {
 
         const getBundlesByOffer = (offer) => {
             debug(`Getting bundles for offer ${offer}`);
-            return Promise.resolve({ id: 2 });
+            return Promise.resolve([{ id: 2 }]);
         };
 
         const getBundle = (bundle) => {
@@ -32,10 +32,21 @@ module.exports = (options) => {
             return Promise.resolve({ id: 3 });
         };
 
+        const getFeaturesByBundle = (bundle) => {
+            debug(`Getting features for bundle ${bundle}`);
+            return Promise.resolve([{ id: 4 }]);
+        };
+
+        const getFeature = (feature) => {
+            debug(`Getting data for feature ${feature}`);
+            return Promise.resolve({ id: 5 });
+        };
+
         cb(null, {
             getFamilies, getFamily,
             getOffersPerFamily, getOffer,
-            getBundlesByOffer, getBundle
+            getBundlesByOffer, getBundle,
+            getFeaturesByBundle, getFeature
         });
     };
 

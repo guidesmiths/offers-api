@@ -38,6 +38,18 @@ module.exports = () => {
             respond(controller.getBundle(bundle));
         });
 
+        app.get('/api/v1/bundles/:bundle/features', (req, res) => {
+            const respond = process(res);
+            const { bundle } = req.params;
+            respond(controller.getFeaturesByBundle(bundle));
+        });
+
+        app.get('/api/v1/features/:feature', (req, res) => {
+            const respond = process(res);
+            const { feature } = req.params;
+            respond(controller.getFeature(feature));
+        });
+
         cb();
     };
 
