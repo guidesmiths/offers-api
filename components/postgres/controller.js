@@ -16,12 +16,16 @@ module.exports = (options) => {
 
         const getOffersPerFamily = (family) => {
             debug(`Getting offers for family ${family}`);
-            return Promise.resolve([{ id: 0 }, { id: 1 }]);
+            return postgres.query(`SELECT off.id, off.name, off.title, off.multichoice, fto.family_id FROM offers off
+                JOIN family_to_offer fto ON off.id=fto.offer_id
+                WHERE fto.family_id=${family};`)
+                .then((result) => result.rows);
         };
 
         const getOffer = (offer) => {
             debug(`Getting data for offer ${offer}`);
-            return Promise.resolve({ id: 1 });
+            return postgres.query(`SELECT * FROM offers WHERE id=${offer};`)
+                .then((result) => result.rows.length && result.rows[0]);
         };
 
         const getBundlesByOffer = (offer) => {
