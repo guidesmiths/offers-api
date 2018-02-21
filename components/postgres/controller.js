@@ -4,12 +4,14 @@ module.exports = (options) => {
     const start = ({ postgres, config, logger }, cb) => {
         const getFamilies = () => {
             debug('Getting all families...');
-            return Promise.resolve([{ id: 0 }, { id: 1 }]);
+            return postgres.query('SELECT * FROM families;')
+                .then((result) => result.rows);
         };
 
         const getFamily = (family) => {
             debug(`Getting data for family ${family}`);
-            return Promise.resolve({ id: 0 });
+            return postgres.query(`SELECT * FROM families WHERE id=${family};`)
+                .then((result) => result.rows.length && result.rows[0]);
         };
 
         const getOffersPerFamily = (family) => {
