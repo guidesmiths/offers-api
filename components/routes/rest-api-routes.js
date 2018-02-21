@@ -1,30 +1,23 @@
-const R = require('ramda');
-const sequential = R.reduce((chain, promise) => chain.then(promise), Promise.resolve());
-
 module.exports = () => {
 
     const start = ({ controller, app }, cb) => {
 
-        const getData = (res, sequence) =>
-            sequential(sequence)
-                .then((response) => res.json(response))
+        const process = (res) => (promise) =>
+            promise
+                .then((payload) => res.json(payload))
                 .catch((err) => res.status(401).json(err));
 
         app.get([ '/api/v1/families', '/api/v1/families/:family' ], (req, res) => {
+            const respond = process(res);
             const { family } = req.params;
-            getData(res, [
-                () => controller.getFamilies(family)
-            ]);
+            respond(controller.getFamilies(family));
         });
 
         app.get([ '/api/v1/families/:family/offers', '/api/v1/offers/:offer' ], (req, res) => {
+            const respond = process(res);
             const { family, offer } = req.params;
-            if (family) return getData(res, [
-                () => controller.getOffersPerFamily(family)
-            ]);
-            getData(res, [
-                () => controller.getOffer(offer)
-            ]);
+            if (family) return respond(controller.getOffersPerFamily(family));
+            respond(controller.getOffer(offer));
         });
 
         cb();
