@@ -5,17 +5,28 @@ module.exports = () => {
 
     const start = ({ controller, app }, cb) => {
 
-        const getData = (sequence) => (res) =>
+        const getData = (res, sequence) =>
             sequential(sequence)
                 .then((response) => res.json(response))
                 .catch((err) => res.status(401).json(err));
 
         app.get([ '/api/v1/families', '/api/v1/families/:family' ], (req, res) => {
             const { family } = req.params;
-            getData([
+            getData(res, [
                 () => controller.getFamilies(family)
-            ])(res);
+            ]);
         });
+
+        app.get([ '/api/v1/families/:family/offers', '/api/v1/offers/:offer' ], (req, res) => {
+            const { family, offer } = req.params;
+            if (family) return getData(res, [
+                () => controller.getOffersPerFamily(family)
+            ]);
+            getData(res, [
+                () => controller.getOffer(offer)
+            ]);
+        });
+
         cb();
     };
 
