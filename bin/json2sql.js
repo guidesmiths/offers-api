@@ -33,7 +33,6 @@ const translateFamilyToOffers = R.reduce((total, { id, offers }) => R.concat(gen
 const translateOfferToBundles = R.reduce((total, { id, bundles }) => R.concat(generateRelatedStatements('offer_to_bundle', id, bundles), total), '');
 const translateBundleToFeatures = R.reduce((total, { id, features }) => R.concat(generateRelatedStatements('bundle_to_features', id, features), total), '');
 
-// TODO make all lists unique by ID before generating insertions (lines below)
 const families = require('../fixtures/all-families.json');
 const offers = R.flatten(R.pluck('offers', families));
 const bundles = R.flatten(R.pluck('bundles', offers));
