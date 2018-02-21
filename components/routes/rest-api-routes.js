@@ -14,10 +14,15 @@ module.exports = () => {
             respond(operation());
         });
 
-        app.get([ '/api/v1/families/:family/offers', '/api/v1/offers/:offer' ], (req, res) => {
+        app.get('/api/v1/families/:family/offers', (req, res) => {
             const respond = process(res);
-            const { family, offer } = req.params;
-            if (family) return respond(controller.getOffersPerFamily(family));
+            const { family } = req.params;
+            respond(controller.getOffersPerFamily(family));
+        });
+
+        app.get('/api/v1/offers/:offer', (req, res) => {
+            const respond = process(res);
+            const { offer } = req.params;
             respond(controller.getOffer(offer));
         });
 
