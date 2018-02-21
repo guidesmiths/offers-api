@@ -22,9 +22,20 @@ module.exports = (options) => {
             return Promise.resolve({ id: 1 });
         };
 
+        const getBundlesByOffer = (offer) => {
+            debug(`Getting bundles for offer ${offer}`);
+            return Promise.resolve({ id: 2 });
+        };
+
+        const getBundle = (bundle) => {
+            debug(`Getting data for bundle ${bundle}`);
+            return Promise.resolve({ id: 3 });
+        };
+
         cb(null, {
             getFamilies, getFamily,
-            getOffersPerFamily, getOffer
+            getOffersPerFamily, getOffer,
+            getBundlesByOffer, getBundle
         });
     };
 

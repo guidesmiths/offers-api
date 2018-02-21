@@ -26,6 +26,18 @@ module.exports = () => {
             respond(controller.getOffer(offer));
         });
 
+        app.get('/api/v1/offers/:offer/bundles', (req, res) => {
+            const respond = process(res);
+            const { offer } = req.params;
+            respond(controller.getBundlesByOffer(offer));
+        });
+
+        app.get('/api/v1/bundles/:bundle', (req, res) => {
+            const respond = process(res);
+            const { bundle } = req.params;
+            respond(controller.getBundle(bundle));
+        });
+
         cb();
     };
 
