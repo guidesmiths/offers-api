@@ -1,0 +1,6 @@
+type Feature {
+  id: ID
+  category: String
+  value: String
+  units: String
+}
