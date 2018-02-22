@@ -3,4 +3,5 @@ type Offer {
   name: String
   title: String
   multichoice: Boolean
+  bundles: [Bundle]
 }

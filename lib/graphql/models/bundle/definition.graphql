@@ -1,0 +1,5 @@
+type Bundle {
+  id: ID
+  name: String
+  price: String
+}
