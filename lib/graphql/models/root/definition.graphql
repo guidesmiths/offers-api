@@ -1,4 +1,4 @@
 type Query {
   families: [ Family ]
-  family(offerId: Int!): Family
+  family(familyId: Int!): Family
 }
