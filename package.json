@@ -44,7 +44,7 @@
     "graphql": "^0.13.1",
     "graphql-tools": "^2.21.0",
     "hogan.js": "^3.0.2",
-    "http-proxy-middleware": "^0.17.4",
+    "http-proxy-middleware": "^0.18.0",
     "make-manifest": "^1.0.1",
     "marv": "^2.0.0",
     "marv-pg-driver": "^2.0.0",
